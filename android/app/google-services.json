@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "184678689438",
+    "project_id": "face-app-e6949",
+    "storage_bucket": "face-app-e6949.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:184678689438:android:7237708ff26f61cdd3e98f",
+        "android_client_info": {
+          "package_name": "com.example.graduation_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpksS07jXHlWnpPIbElBfU7oW0NLTCQLA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

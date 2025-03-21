@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/constants.dart';
 
 class BackgroundShape extends StatelessWidget {
@@ -9,8 +10,8 @@ class BackgroundShape extends StatelessWidget {
     return Stack(
       children: [
         FractionallySizedBox(
-          heightFactor: 0.23,
-          widthFactor: 1,
+          heightFactor: 0.23.h,
+          widthFactor: 1.w,
           child: Container(
             color: kPrimaryColor,
           ),

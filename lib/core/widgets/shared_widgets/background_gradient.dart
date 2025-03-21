@@ -1,6 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/constants.dart';
 
 class BackgroundGradient extends StatelessWidget {
@@ -8,12 +9,17 @@ class BackgroundGradient extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        FractionallySizedBox(
-          heightFactor: 0.5,
-          widthFactor: 1,
-          child: Container(
+    final double radiusValue = 55.r;
+    final double containerHeight = radiusValue;
+
+    return SizedBox(
+      height: 1.sh,
+      width: 1.sw,
+      child: Stack(
+        children: [
+          Container(
+            height: 0.5.sh,
+            width: 1.sw,
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [kPrimaryColor, kBackgroundColor],
@@ -22,22 +28,23 @@ class BackgroundGradient extends StatelessWidget {
               ),
             ),
           ),
-        ),
-        Positioned(
-          bottom: -5,
-          left: 0,
-          right: 0,
-          child: Container(
-            height: 55,
-            decoration: BoxDecoration(
-              color: kBackgroundColor,
-              borderRadius: BorderRadius.vertical(
-                top: Radius.circular(100),
+          Positioned(
+            top: (0.5.sh) - (containerHeight / 1),
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: Container(
+              height: containerHeight,
+              decoration: BoxDecoration(
+                color: kBackgroundColor,
+                borderRadius: BorderRadius.vertical(
+                  top: Radius.circular(radiusValue),
+                ),
               ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

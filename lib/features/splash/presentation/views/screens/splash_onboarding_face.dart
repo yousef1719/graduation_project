@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/constants.dart';
 import 'package:graduation_project/core/utils/assets.dart';
 import 'package:graduation_project/core/utils/styles.dart';
@@ -17,7 +18,7 @@ class SplashOnboardingFace extends StatelessWidget {
       children: [
         BackgroundGradient(),
         Padding(
-          padding: const EdgeInsets.all(14),
+          padding: EdgeInsets.all(14.w),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -25,8 +26,8 @@ class SplashOnboardingFace extends StatelessWidget {
               Align(
                 alignment: Alignment.topRight,
                 child: Padding(
-                  padding: const EdgeInsets.only(
-                    top: 8,
+                  padding: EdgeInsets.only(
+                    top: 8.h,
                   ),
                   child: AdditionTextButton(
                     onPressed: () {
@@ -39,20 +40,20 @@ class SplashOnboardingFace extends StatelessWidget {
                     },
                     text: 'Skip',
                     color: kBackgroundColor,
-                    fontsize: 16,
+                    fontsize: 16.sp,
                   ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 50),
+                padding: EdgeInsets.only(top: 15.h),
                 child: Image.asset(
                   AssetsData.facescan,
-                  width: 326,
-                  height: 326,
+                  width: 326.w,
+                  height: 326.w,
                 ),
               ),
               SizedBox(
-                height: 40,
+                height: 40.h,
               ),
               Column(
                 children: [
@@ -64,7 +65,7 @@ class SplashOnboardingFace extends StatelessWidget {
                         style: Styles(
                           fontWeight: FontWeight.w800,
                           color: kTextColor,
-                          fontSize: 30,
+                          fontSize: 30.sp,
                         ).textStyleInter,
                       ),
                       Text(
@@ -72,7 +73,7 @@ class SplashOnboardingFace extends StatelessWidget {
                         style: Styles(
                                 fontWeight: FontWeight.w800,
                                 color: kSecondaryColor,
-                                fontSize: 30)
+                                fontSize: 30.sp)
                             .textStyleInter,
                       ),
                     ],
@@ -82,17 +83,17 @@ class SplashOnboardingFace extends StatelessWidget {
                     style: Styles(
                             fontWeight: FontWeight.w800,
                             color: kSecondaryColor,
-                            fontSize: 30)
+                            fontSize: 30.sp)
                         .textStyleInter,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 60, bottom: 90),
+                    padding: EdgeInsets.only(top: 60.h, bottom: 80.h),
                     child: Text(
                       'Unlock the power of facial\n recognition effortlessly.',
                       style: Styles(
                               fontWeight: FontWeight.w400,
                               color: kTextColor,
-                              fontSize: 16)
+                              fontSize: 16.sp)
                           .textStyleInter,
                     ),
                   )

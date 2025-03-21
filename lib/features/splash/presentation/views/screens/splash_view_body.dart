@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:graduation_project/constants.dart';
 import 'package:graduation_project/core/utils/assets.dart';
@@ -28,30 +29,30 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(14),
+      padding: EdgeInsets.all(14.w),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Image.asset(
             AssetsData.logo,
-            width: 149,
-            height: 153,
+            width: 149.w,
+            height: 153.h,
           ),
           SizedBox(
-            height: 10,
+            height: 10.h,
           ),
           Text(
             'WHO',
             textAlign: TextAlign.center,
             style: Styles(
               color: kPrimaryColor,
-              fontSize: 40,
+              fontSize: 40.sp,
               fontWeight: FontWeight.w400,
             ).textStyleTrad,
           ),
           SizedBox(
-            height: 150,
+            height: 150.h,
           )
         ],
       ),

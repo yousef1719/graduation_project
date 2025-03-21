@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/constants.dart';
 import 'package:graduation_project/core/utils/assets.dart';
 import 'package:graduation_project/core/utils/styles.dart';
@@ -19,33 +20,33 @@ class _SplashRegViewBodyState extends State<SplashRegViewBody> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(14),
+      padding: EdgeInsets.all(14.w),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
-            height: 80,
+            height: 80.h,
           ),
           Image.asset(
             AssetsData.logo,
-            width: 149,
-            height: 153,
+            width: 149.w,
+            height: 153.h,
           ),
           SizedBox(
-            height: 10,
+            height: 10.h,
           ),
           Text(
             'WHO',
             softWrap: true,
             style: Styles(
                     color: kPrimaryColor,
-                    fontSize: 40,
+                    fontSize: 40.sp,
                     fontWeight: FontWeight.w400)
                 .textStyleTrad,
           ),
           SizedBox(
-            height: 22,
+            height: 22.h,
           ),
           CustomTextButton(
             color: kPrimaryColor,
@@ -61,7 +62,7 @@ class _SplashRegViewBodyState extends State<SplashRegViewBody> {
             },
           ),
           SizedBox(
-            height: 16,
+            height: 16.h,
           ),
           CustomTextButton(
             color: kPrimaryColor,
@@ -77,7 +78,7 @@ class _SplashRegViewBodyState extends State<SplashRegViewBody> {
             },
           ),
           Padding(
-              padding: const EdgeInsets.only(top: 240),
+              padding: EdgeInsets.only(top: 240.h),
               child: AdditionTextButton(
                 text: 'Continue as a guest',
                 color: kPrimaryColor,
@@ -86,7 +87,9 @@ class _SplashRegViewBodyState extends State<SplashRegViewBody> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => UserInformation(),
+                      builder: (context) => UserInformation(
+                        userModel: null,
+                      ),
                     ),
                   );
                 },

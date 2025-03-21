@@ -2,6 +2,7 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/constants.dart';
 import 'package:graduation_project/core/utils/styles.dart';
 import 'package:graduation_project/core/widgets/shared_widgets/custom_text_button.dart';
@@ -70,66 +71,66 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(14),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Align(
-              alignment: Alignment.topLeft,
-              child: Padding(
-                padding: const EdgeInsets.only(top: 5),
-                child: IconButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  icon: Icon(
-                      size: 22, color: kPrimaryColor, Icons.arrow_back_ios),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(14.w),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Align(
+                alignment: Alignment.topLeft,
+                child: Padding(
+                  padding: EdgeInsets.only(top: 5.h),
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: Icon(
+                        size: 22.sp,
+                        color: kPrimaryColor,
+                        Icons.arrow_back_ios),
+                  ),
                 ),
               ),
-            ),
-            Spacer(
-              flex: 1,
-            ),
-            Text(
-              'Confirm it\'s you.',
-              style: Styles(
-                fontWeight: FontWeight.w600,
-                color: kHintColor,
-                fontSize: 18,
-              ).textStyleInter,
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Text(
-              'Please verify your email to continue',
-              style: Styles(
-                fontWeight: FontWeight.w400,
-                color: Color(0xff787878),
-                fontSize: 14,
-              ).textStyleInter,
-            ),
-            SizedBox(
-              height: 40,
-            ),
-            CustomTextFormField(
-              hintText: 'Enter your email',
-              controller: _emailController,
-            ),
-            SizedBox(
-              height: 24,
-            ),
-            CustomTextButton(
-              color: kPrimaryColor,
-              text: 'Continue',
-              onPressed: () => resetPassword(),
-            ),
-            Spacer(
-              flex: 6,
-            ),
-          ],
+              SizedBox(height: 50.h),
+              Text(
+                'Confirm it\'s you.',
+                style: Styles(
+                  fontWeight: FontWeight.w600,
+                  color: kHintColor,
+                  fontSize: 18.sp,
+                ).textStyleInter,
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              Text(
+                'Please verify your email to continue',
+                style: Styles(
+                  fontWeight: FontWeight.w400,
+                  color: Color(0xff787878),
+                  fontSize: 14.sp,
+                ).textStyleInter,
+              ),
+              SizedBox(
+                height: 40.h,
+              ),
+              CustomTextFormField(
+                hintText: 'Enter your email',
+                controller: _emailController,
+              ),
+              SizedBox(
+                height: 24.h,
+              ),
+              CustomTextButton(
+                color: kPrimaryColor,
+                text: 'Continue',
+                onPressed: () => resetPassword(),
+              ),
+              SizedBox(height: 200.h),
+            ],
+          ),
         ),
       ),
     );

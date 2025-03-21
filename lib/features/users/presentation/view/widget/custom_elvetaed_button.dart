@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/core/utils/styles.dart';
 
 // ignore: must_be_immutable
@@ -16,15 +17,16 @@ class CustomElvetaedButton extends StatelessWidget {
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           backgroundColor: backgroundcolor,
-          padding: const EdgeInsets.symmetric(vertical: 16),
+          padding: EdgeInsets.symmetric(vertical: 16.h),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(8.r),
           ),
         ),
         child: Text(
           text!,
-          style: Styles(color: color, fontSize: 16, fontWeight: FontWeight.w700)
-              .textStyleInter,
+          style:
+              Styles(color: color, fontSize: 16.sp, fontWeight: FontWeight.w700)
+                  .textStyleInter,
         ),
       ),
     );

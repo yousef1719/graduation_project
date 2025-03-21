@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/constants.dart';
 
 // ignore: must_be_immutable
@@ -34,21 +35,21 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       obscureText: widget.isPassword ? _isObscured : false,
       decoration: InputDecoration(
         hintText: widget.hintText,
-        hintStyle: TextStyle(
-          color: Color(0xff787878),
-        ),
+        hintStyle: TextStyle(color: Color(0xff787878), fontSize: 14.sp),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(8.r),
           borderSide: BorderSide(
             color: Color(0xffE1E6EB),
           ),
         ),
         border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8.r),
           borderSide: BorderSide(
             color: Colors.white,
           ),
         ),
         focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8.r),
           borderSide: BorderSide(color: kPrimaryColor),
         ),
         suffixIcon: widget.isPassword

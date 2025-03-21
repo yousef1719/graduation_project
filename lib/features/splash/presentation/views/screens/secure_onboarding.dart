@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/constants.dart';
 import 'package:graduation_project/core/utils/assets.dart';
 import 'package:graduation_project/core/utils/styles.dart';
@@ -16,18 +17,18 @@ class SecureOnboarding extends StatelessWidget {
       children: [
         BackgroundGradient(),
         Positioned(
-          top: 25,
-          left: 10,
+          top: 25.h,
+          left: 10.w,
           child: IconButton(
-            icon: const Icon(Icons.arrow_back_ios,
-                size: 20, color: kBackgroundColor),
+            icon: Icon(Icons.arrow_back_ios,
+                size: 20.sp, color: kBackgroundColor),
             onPressed: () {
               Navigator.pop(context);
             },
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(14),
+          padding: EdgeInsets.all(14.w),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -35,7 +36,7 @@ class SecureOnboarding extends StatelessWidget {
               Align(
                 alignment: Alignment.topRight,
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 8),
+                  padding: EdgeInsets.only(top: 8.h),
                   child: AdditionTextButton(
                     onPressed: () {
                       Navigator.push(
@@ -47,20 +48,22 @@ class SecureOnboarding extends StatelessWidget {
                     },
                     text: 'Skip',
                     color: kBackgroundColor,
-                    fontsize: 16,
+                    fontsize: 16.sp,
                   ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 40, bottom: 30),
+                padding: EdgeInsets.only(
+                  top: 15.h,
+                ),
                 child: Image.asset(
                   AssetsData.securephoto,
-                  width: 326,
-                  height: 326,
+                  width: 326.w,
+                  height: 326.h,
                 ),
               ),
               SizedBox(
-                height: 40,
+                height: 40.h,
               ),
               Column(
                 children: [
@@ -72,7 +75,7 @@ class SecureOnboarding extends StatelessWidget {
                         style: Styles(
                           fontWeight: FontWeight.w800,
                           color: kSecondaryColor,
-                          fontSize: 30,
+                          fontSize: 30.sp,
                         ).textStyleInter,
                       ),
                       Text(
@@ -80,7 +83,7 @@ class SecureOnboarding extends StatelessWidget {
                         style: Styles(
                                 fontWeight: FontWeight.w800,
                                 color: kTextColor,
-                                fontSize: 30)
+                                fontSize: 30.sp)
                             .textStyleInter,
                       ),
                       Text(
@@ -88,7 +91,7 @@ class SecureOnboarding extends StatelessWidget {
                         style: Styles(
                           fontWeight: FontWeight.w800,
                           color: kSecondaryColor,
-                          fontSize: 30,
+                          fontSize: 30.sp,
                         ).textStyleInter,
                       ),
                     ],
@@ -98,17 +101,17 @@ class SecureOnboarding extends StatelessWidget {
                     style: Styles(
                             fontWeight: FontWeight.w800,
                             color: kTextColor,
-                            fontSize: 30)
+                            fontSize: 30.sp)
                         .textStyleInter,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 30, bottom: 5),
+                    padding: EdgeInsets.only(top: 30.h, bottom: 5.h),
                     child: Text(
                       'Your data is encrypted and protected at all',
                       style: Styles(
                               fontWeight: FontWeight.w400,
                               color: kTextColor,
-                              fontSize: 16)
+                              fontSize: 16.sp)
                           .textStyleInter,
                     ),
                   ),
@@ -117,13 +120,13 @@ class SecureOnboarding extends StatelessWidget {
                     style: Styles(
                             fontWeight: FontWeight.w400,
                             color: kTextColor,
-                            fontSize: 16)
+                            fontSize: 16.sp)
                         .textStyleInter,
                   )
                 ],
               ),
               SizedBox(
-                height: 105,
+                height: 106.h,
               ),
               CircleProgressIndicator(
                 value: 1,

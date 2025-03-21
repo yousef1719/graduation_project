@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 enum ButtonType {
   filled,
@@ -25,19 +26,19 @@ class CustomTextButton extends StatelessWidget {
       child: Container(
           decoration: BoxDecoration(
             color: type == ButtonType.filled ? color : Colors.transparent,
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(10.r),
             border: type == ButtonType.outlined
-                ? Border.all(color: color, width: 2)
+                ? Border.all(color: color, width: 2.w)
                 : null,
           ),
-          height: 52,
+          height: 52.h,
           width: double.infinity,
           child: Center(
             child: Text(
               text,
               style: TextStyle(
                 fontFamily: 'Inter',
-                fontSize: 16,
+                fontSize: 16.sp,
                 fontWeight: FontWeight.w600,
                 decoration: TextDecoration.none,
                 color: type == ButtonType.filled ? Colors.white : color,

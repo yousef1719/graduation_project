@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/constants.dart';
 import 'package:graduation_project/core/utils/styles.dart';
 
@@ -13,28 +14,28 @@ class DividerWithText extends StatelessWidget {
           children: [
             Expanded(
                 child: Divider(
-              thickness: 2,
+              thickness: 2.h,
               color: Colors.black,
-              indent: 61,
-              endIndent: 5,
+              indent: 50.w,
+              endIndent: 5.w,
             )),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8),
+              padding: EdgeInsets.symmetric(horizontal: 8.w),
               child: Text(
                 'or continue with',
                 style: Styles(
                         fontWeight: FontWeight.w500,
                         color: Color(0xff4B4B4B),
-                        fontSize: 16)
+                        fontSize: 16.sp)
                     .textStyleInter,
               ),
             ),
             Expanded(
               child: Divider(
-                thickness: 2,
+                thickness: 2.h,
                 color: kPrimaryColor,
-                indent: 5,
-                endIndent: 61,
+                indent: 5.w,
+                endIndent: 50.w,
               ),
             ),
           ],

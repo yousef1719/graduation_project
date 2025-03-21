@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // ignore: must_be_immutable
 class AdditionTextButton extends StatelessWidget {
-  AdditionTextButton(
+  const AdditionTextButton(
       {required this.text,
       required this.color,
       required this.fontsize,
       this.onPressed,
       super.key});
 
-  String text;
-  Color color;
-  double fontsize;
+  final String text;
+  final Color color;
+  final double fontsize;
   final VoidCallback? onPressed;
 
   @override
@@ -24,7 +25,7 @@ class AdditionTextButton extends StatelessWidget {
             fontWeight: FontWeight.w500,
             fontFamily: 'Inter',
             color: color,
-            fontSize: fontsize),
+            fontSize: fontsize.w),
       ),
     );
   }

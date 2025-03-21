@@ -15,7 +15,7 @@ class AssetsData {
 
   static const successphoto = 'assets/images/Succces order icon.svg';
 
-  static const scanlogo = 'assets/images/Rectangle 4.png';
+  static const scanlogo = 'assets/images/mask_with_identification_points.png';
 
-  static const camerabutton = 'assets/images/Group.png';
+  static const camerabutton = 'assets/images/Vector.svg';
 }

@@ -76,7 +76,7 @@ class BiometricOnboarding extends StatelessWidget {
                         style: Styles(
                           fontWeight: FontWeight.w800,
                           color: kSecondaryColor,
-                          fontSize: 30.sp,
+                          fontSize: 20.sp,
                         ).textStyleInter,
                       ),
                       Text(
@@ -84,7 +84,7 @@ class BiometricOnboarding extends StatelessWidget {
                         style: Styles(
                                 fontWeight: FontWeight.w800,
                                 color: kTextColor,
-                                fontSize: 30.sp)
+                                fontSize: 20.sp)
                             .textStyleInter,
                       ),
                       Text(
@@ -92,7 +92,7 @@ class BiometricOnboarding extends StatelessWidget {
                         style: Styles(
                           fontWeight: FontWeight.w800,
                           color: kSecondaryColor,
-                          fontSize: 30.sp,
+                          fontSize: 20.sp,
                         ).textStyleInter,
                       ),
                     ],
@@ -102,26 +102,26 @@ class BiometricOnboarding extends StatelessWidget {
                     style: Styles(
                             fontWeight: FontWeight.w800,
                             color: kTextColor,
-                            fontSize: 30.sp)
+                            fontSize: 20.sp)
                         .textStyleInter,
                   ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 30.h, bottom: 5.h),
-                    child: Text(
-                      'Powered by cutting-edge AI for reliable ',
-                      style: Styles(
-                              fontWeight: FontWeight.w400,
-                              color: kTextColor,
-                              fontSize: 16.sp)
-                          .textStyleInter,
-                    ),
+                  SizedBox(
+                    height: 40.h,
+                  ),
+                  Text(
+                    'Powered by cutting-edge AI for reliable ',
+                    style: Styles(
+                            fontWeight: FontWeight.w400,
+                            color: kTextColor,
+                            fontSize: 12.sp)
+                        .textStyleInter,
                   ),
                   Text(
                     'recognition.',
                     style: Styles(
                             fontWeight: FontWeight.w400,
                             color: kTextColor,
-                            fontSize: 16.sp)
+                            fontSize: 14.sp)
                         .textStyleInter,
                   )
                 ],

@@ -16,7 +16,7 @@ class DividerWithText extends StatelessWidget {
                 child: Divider(
               thickness: 2.h,
               color: Colors.black,
-              indent: 50.w,
+              indent: 30.w,
               endIndent: 5.w,
             )),
             Padding(
@@ -26,7 +26,7 @@ class DividerWithText extends StatelessWidget {
                 style: Styles(
                         fontWeight: FontWeight.w500,
                         color: Color(0xff4B4B4B),
-                        fontSize: 16.sp)
+                        fontSize: 12.sp)
                     .textStyleInter,
               ),
             ),
@@ -35,7 +35,7 @@ class DividerWithText extends StatelessWidget {
                 thickness: 2.h,
                 color: kPrimaryColor,
                 indent: 5.w,
-                endIndent: 50.w,
+                endIndent: 30.w,
               ),
             ),
           ],

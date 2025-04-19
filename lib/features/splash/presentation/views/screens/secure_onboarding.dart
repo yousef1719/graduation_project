@@ -75,7 +75,7 @@ class SecureOnboarding extends StatelessWidget {
                         style: Styles(
                           fontWeight: FontWeight.w800,
                           color: kSecondaryColor,
-                          fontSize: 30.sp,
+                          fontSize: 25.sp,
                         ).textStyleInter,
                       ),
                       Text(
@@ -83,7 +83,7 @@ class SecureOnboarding extends StatelessWidget {
                         style: Styles(
                                 fontWeight: FontWeight.w800,
                                 color: kTextColor,
-                                fontSize: 30.sp)
+                                fontSize: 25.sp)
                             .textStyleInter,
                       ),
                       Text(
@@ -91,7 +91,7 @@ class SecureOnboarding extends StatelessWidget {
                         style: Styles(
                           fontWeight: FontWeight.w800,
                           color: kSecondaryColor,
-                          fontSize: 30.sp,
+                          fontSize: 25.sp,
                         ).textStyleInter,
                       ),
                     ],
@@ -101,17 +101,17 @@ class SecureOnboarding extends StatelessWidget {
                     style: Styles(
                             fontWeight: FontWeight.w800,
                             color: kTextColor,
-                            fontSize: 30.sp)
+                            fontSize: 25.sp)
                         .textStyleInter,
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 30.h, bottom: 5.h),
+                    padding: EdgeInsets.only(top: 40.h, bottom: 10.h),
                     child: Text(
                       'Your data is encrypted and protected at all',
                       style: Styles(
                               fontWeight: FontWeight.w400,
                               color: kTextColor,
-                              fontSize: 16.sp)
+                              fontSize: 12.sp)
                           .textStyleInter,
                     ),
                   ),
@@ -120,13 +120,13 @@ class SecureOnboarding extends StatelessWidget {
                     style: Styles(
                             fontWeight: FontWeight.w400,
                             color: kTextColor,
-                            fontSize: 16.sp)
+                            fontSize: 12.sp)
                         .textStyleInter,
                   )
                 ],
               ),
               SizedBox(
-                height: 106.h,
+                height: 75.h,
               ),
               CircleProgressIndicator(
                 value: 1,

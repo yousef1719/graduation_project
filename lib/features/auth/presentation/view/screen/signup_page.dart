@@ -128,7 +128,7 @@ class _SignupPageState extends State<SignupPage> {
                         style: Styles(
                                 fontWeight: FontWeight.w400,
                                 color: kHintColor,
-                                fontSize: 14.sp)
+                                fontSize: 12.sp)
                             .textStyleInter,
                       ),
                       Text(
@@ -136,7 +136,7 @@ class _SignupPageState extends State<SignupPage> {
                         style: Styles(
                                 fontWeight: FontWeight.w600,
                                 color: kPrimaryColor,
-                                fontSize: 14.sp)
+                                fontSize: 12.sp)
                             .textStyleInter,
                       ),
                     ],
@@ -146,7 +146,7 @@ class _SignupPageState extends State<SignupPage> {
                     style: Styles(
                             fontWeight: FontWeight.w500,
                             color: kPrimaryColor,
-                            fontSize: 14.sp)
+                            fontSize: 12.sp)
                         .textStyleInter,
                   ),
                   SizedBox(height: 150.h),
@@ -158,7 +158,7 @@ class _SignupPageState extends State<SignupPage> {
                         style: Styles(
                                 fontWeight: FontWeight.w500,
                                 color: kHintColor,
-                                fontSize: 16.sp)
+                                fontSize: 12.sp)
                             .textStyleInter,
                       ),
                       AdditionTextButton(
@@ -172,7 +172,7 @@ class _SignupPageState extends State<SignupPage> {
                         },
                         text: 'Sign in',
                         color: kPrimaryColor,
-                        fontsize: 15.sp,
+                        fontsize: 12.sp,
                       ),
                     ],
                   ),

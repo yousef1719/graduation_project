@@ -87,7 +87,7 @@ class SplashOnboardingFace extends StatelessWidget {
                         .textStyleInter,
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 60.h, bottom: 80.h),
+                    padding: EdgeInsets.only(top: 60.h, bottom: 40.h),
                     child: Text(
                       'Unlock the power of facial\n recognition effortlessly.',
                       style: Styles(

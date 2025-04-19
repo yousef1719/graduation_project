@@ -96,7 +96,7 @@ class _LoginPageState extends State<LoginPage> {
                         style: Styles(
                           fontWeight: FontWeight.w500,
                           color: kHintColor,
-                          fontSize: 15.sp,
+                          fontSize: 12.sp,
                         ).textStyleInter,
                       ),
                       Spacer(),
@@ -109,7 +109,7 @@ class _LoginPageState extends State<LoginPage> {
                         },
                         text: 'Forget password',
                         color: kPrimaryColor,
-                        fontsize: 15.sp,
+                        fontsize: 12.sp,
                       ),
                     ],
                   ),
@@ -174,7 +174,7 @@ class _LoginPageState extends State<LoginPage> {
                         style: Styles(
                                 fontWeight: FontWeight.w500,
                                 color: kHintColor,
-                                fontSize: 16.sp)
+                                fontSize: 12.sp)
                             .textStyleInter,
                       ),
                       AdditionTextButton(
@@ -188,7 +188,7 @@ class _LoginPageState extends State<LoginPage> {
                         },
                         text: 'Sign up',
                         color: kPrimaryColor,
-                        fontsize: 15.sp,
+                        fontsize: 12.sp,
                       ),
                     ],
                   ),

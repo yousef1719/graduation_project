@@ -32,8 +32,13 @@ class CameraScreenController extends GetxController {
   Future<void> initCamera() async {
     try {
       final cameras = await availableCameras();
+      if (cameras.isEmpty) {
+        Get.snackbar('Error', 'No cameras found');
+        return;
+      }
       final firstCamera = cameras.first;
       cameraController = CameraController(firstCamera, ResolutionPreset.high);
+      initializeControllerFuture = cameraController.initialize();
       await cameraController.initialize();
       update();
     } catch (e) {

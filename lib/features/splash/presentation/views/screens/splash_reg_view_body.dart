@@ -7,7 +7,7 @@ import 'package:graduation_project/core/widgets/shared_widgets/addition_text_but
 import 'package:graduation_project/core/widgets/shared_widgets/custom_text_button.dart';
 import 'package:graduation_project/features/auth/presentation/view/screen/login_page.dart';
 import 'package:graduation_project/features/auth/presentation/view/screen/signup_page.dart';
-import 'package:graduation_project/features/users/presentation/view/screen/user_information.dart';
+import 'package:graduation_project/features/home/presentation/views/screens/home_view.dart';
 
 class SplashRegViewBody extends StatefulWidget {
   const SplashRegViewBody({super.key});
@@ -87,9 +87,7 @@ class _SplashRegViewBodyState extends State<SplashRegViewBody> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => UserInformation(
-                        userModel: null,
-                      ),
+                      builder: (context) => HomeView(),
                     ),
                   );
                 },

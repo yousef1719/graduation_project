@@ -9,9 +9,9 @@ class BackgroundShape extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        FractionallySizedBox(
-          heightFactor: 0.23.h,
-          widthFactor: 1.w,
+        SizedBox(
+          height: 0.23.sh,
+          width: 1.sw,
           child: Container(
             color: kPrimaryColor,
           ),

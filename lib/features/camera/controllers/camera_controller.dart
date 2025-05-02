@@ -1,16 +1,20 @@
 import 'dart:developer';
+import 'dart:io';
 import 'package:camera/camera.dart';
 import 'package:get/get.dart';
-import 'package:dio/dio.dart' as dio;
-import 'package:graduation_project/core/network/api_endpoints.dart';
 import 'package:graduation_project/core/network/dio_helper.dart';
 import 'package:graduation_project/core/models/user_model.dart';
+import 'package:graduation_project/features/camera/services/camera_service.dart';
+import 'package:graduation_project/features/camera/services/upload_service.dart';
 
 class CameraScreenController extends GetxController {
-  late CameraController cameraController;
-  Future<void>? initializeControllerFuture;
+  final CameraService _cameraService = CameraService();
+  final UploadService _uploadService = UploadService();
   RxBool isVerticalMode = true.obs;
   RxBool isLoading = false.obs;
+  CameraController get cameraController => _cameraService.cameraController;
+  Future<void>? get initializeControllerFuture =>
+      _cameraService.initializeControllerFuture;
 
   @override
   void onInit() {
@@ -21,7 +25,7 @@ class CameraScreenController extends GetxController {
 
   @override
   void onClose() {
-    cameraController.dispose();
+    _cameraService.dispose();
     super.onClose();
   }
 
@@ -31,15 +35,8 @@ class CameraScreenController extends GetxController {
 
   Future<void> initCamera() async {
     try {
-      final cameras = await availableCameras();
-      if (cameras.isEmpty) {
-        Get.snackbar('Error', 'No cameras found');
-        return;
-      }
-      final firstCamera = cameras.first;
-      cameraController = CameraController(firstCamera, ResolutionPreset.high);
-      initializeControllerFuture = cameraController.initialize();
-      await cameraController.initialize();
+      await _cameraService.initCamera();
+
       update();
     } catch (e) {
       log('Failed to initialize camera: $e');
@@ -48,18 +45,20 @@ class CameraScreenController extends GetxController {
   }
 
   Future<UserModel?> captureAndUpload() async {
-    if (!cameraController.value.isInitialized) return null;
-
     try {
       isLoading.value = true;
 
-      final image = await cameraController.takePicture();
+      final image = await _cameraService.takePicture();
       log('Image Path: ${image.path}');
 
-      final userModel = await uploadImageAndGetUser(image.path);
+      final userModel =
+          await _uploadService.uploadImageAndGetUser(File(image.path));
 
       if (userModel != null) {
         Get.toNamed('/userInformation', arguments: userModel);
+      } else {
+        Get.snackbar(
+            "Face Not Detected", "Please try again with a clear face photo.");
       }
 
       return userModel;
@@ -71,31 +70,49 @@ class CameraScreenController extends GetxController {
       isLoading.value = false;
     }
   }
-
-  Future<UserModel?> uploadImageAndGetUser(String imagePath) async {
-    try {
-      final fileName = imagePath.split('/').last;
-
-      final formData = dio.FormData.fromMap({
-        'image':
-            await dio.MultipartFile.fromFile(imagePath, filename: fileName),
-      });
-
-      final response = await DioHelper.post(
-        url: ApiEndpoints.uploadImage,
-        data: formData,
-      );
-
-      if (response.statusCode == 200 || response.statusCode == 201) {
-        return UserModel.fromJson(response.data);
-      } else {
-        Get.snackbar('Error', 'Failed to upload image: ${response.statusCode}');
-        return null;
-      }
-    } catch (e) {
-      log('Upload error: $e');
-      Get.snackbar('Error', 'Something went wrong');
-      return null;
-    }
-  }
 }
+  //   if (response.statusCode == 200 || response.statusCode == 201) {
+  //     return UserModel.fromJson(response.data);
+  //   } else {
+  //     Get.snackbar('Error', 'Failed to upload image: ${response.statusCode}');
+  //     return null;
+  //   }
+  // } catch (e) {
+  //   log('Upload error: $e');
+  //   Get.snackbar('Error', 'Something went wrong');
+  //   return null;
+  // }
+
+
+//if (response.statusCode == 200 || response.statusCode == 201) {
+    //     log('Upload successful: ${response.data}');
+    //     return UserModel.fromJson(response.data);
+    //   } else if (response.statusCode == 403) {
+    //     log('403 Forbidden response: ${response.data}');
+    //     Get.snackbar(
+    //         'Error', 'Permission denied. Please check server configuration');
+    //     return null;
+    //   } else {
+    //     final errorMsg = response.data['error'] ?? 'Unexpected server response';
+    //     log('Unexpected response: ${response.statusCode} - $errorMsg');
+    //     Get.snackbar('Error', errorMsg);
+    //     return null;
+    //   }
+    // } on dio.DioException catch (e) {
+    //   log('Dio Error: ${e.message}');
+    //   log('Response: ${e.response?.data}');
+    //   log('Status Code: ${e.response?.statusCode}');
+
+    //   if (e.response?.statusCode == 403) {
+    //     Get.snackbar('Error', 'Server rejected request (403 Forbidden)');
+    //   } else {
+    //     Get.snackbar('Error', 'Network error occurred');
+    //   }
+    //   return null;
+    // } catch (e) {
+    //   log('General Error: $e');
+    //   Get.snackbar('Error', 'Something went wrong');
+    //   return null;
+    // }
+
+    

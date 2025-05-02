@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // ignore: must_be_immutable
 class AdditionTextButton extends StatelessWidget {
@@ -25,7 +24,7 @@ class AdditionTextButton extends StatelessWidget {
             fontWeight: FontWeight.w500,
             fontFamily: 'Inter',
             color: color,
-            fontSize: fontsize.w),
+            fontSize: fontsize),
       ),
     );
   }

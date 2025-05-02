@@ -20,7 +20,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     Future.delayed(
       Duration(seconds: 5),
       () {
-        Get.to(() => SplashOnboardingFace(),
+        Get.off(() => SplashOnboardingFace(),
             transition: Transition.fade, duration: kTransitionDuration);
       },
     );

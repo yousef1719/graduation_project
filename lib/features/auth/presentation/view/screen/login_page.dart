@@ -103,9 +103,11 @@ class _LoginPageState extends State<LoginPage> {
                       AdditionTextButton(
                         onPressed: () {
                           Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => ForgotPassword()));
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ForgotPassword(),
+                            ),
+                          );
                         },
                         text: 'Forget password',
                         color: kPrimaryColor,
@@ -126,11 +128,12 @@ class _LoginPageState extends State<LoginPage> {
                             if (!mounted) return;
                             showSnackBar(context, 'Success');
                             await Future.delayed(Duration(seconds: 3));
-                            Navigator.push(
+                            Navigator.pushAndRemoveUntil(
                               context,
                               MaterialPageRoute(
                                 builder: (context) => HomeView(),
                               ),
+                              (route) => false,
                             );
                           } on FirebaseAuthException catch (ex) {
                             print('FirebaseAuthException code: ${ex.code}');
@@ -174,7 +177,7 @@ class _LoginPageState extends State<LoginPage> {
                         style: Styles(
                                 fontWeight: FontWeight.w500,
                                 color: kHintColor,
-                                fontSize: 12.sp)
+                                fontSize: 13.sp)
                             .textStyleInter,
                       ),
                       AdditionTextButton(
@@ -188,7 +191,7 @@ class _LoginPageState extends State<LoginPage> {
                         },
                         text: 'Sign up',
                         color: kPrimaryColor,
-                        fontsize: 12.sp,
+                        fontsize: 13.sp,
                       ),
                     ],
                   ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:graduation_project/core/utils/assets.dart';
 
 class SocialLogo extends StatelessWidget {
@@ -11,19 +12,19 @@ class SocialLogo extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Image.asset(
+        SvgPicture.asset(
           AssetsData.applelogo,
         ),
         SizedBox(
           width: 20.w,
         ),
-        Image.asset(
+        SvgPicture.asset(
           AssetsData.googlelogo,
         ),
         SizedBox(
           width: 20.w,
         ),
-        Image.asset(
+        SvgPicture.asset(
           AssetsData.facebooklogo,
         ),
         SizedBox(

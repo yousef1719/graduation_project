@@ -7,11 +7,11 @@ class AssetsData {
 
   static const securephoto = 'assets/images/securephoto.png';
 
-  static const applelogo = 'assets/images/ic_round-apple.png';
+  static const applelogo = 'assets/images/ic_round-apple.svg';
 
-  static const googlelogo = 'assets/images/devicon_google.png';
+  static const googlelogo = 'assets/images/devicon_google.svg';
 
-  static const facebooklogo = 'assets/images/logos_facebook.png';
+  static const facebooklogo = 'assets/images/logos_facebook.svg';
 
   static const successphoto = 'assets/images/Succces order icon.svg';
 

@@ -31,11 +31,12 @@ class SplashOnboardingFace extends StatelessWidget {
                   ),
                   child: AdditionTextButton(
                     onPressed: () {
-                      Navigator.push(
+                      Navigator.pushAndRemoveUntil(
                         context,
                         MaterialPageRoute(
                           builder: (context) => SplashRegViewBody(),
                         ),
+                        (route) => false,
                       );
                     },
                     text: 'Skip',
@@ -49,7 +50,7 @@ class SplashOnboardingFace extends StatelessWidget {
                 child: Image.asset(
                   AssetsData.facescan,
                   width: 326.w,
-                  height: 326.w,
+                  height: 326.h,
                 ),
               ),
               SizedBox(
@@ -87,14 +88,17 @@ class SplashOnboardingFace extends StatelessWidget {
                         .textStyleInter,
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 60.h, bottom: 40.h),
-                    child: Text(
-                      'Unlock the power of facial\n recognition effortlessly.',
-                      style: Styles(
-                              fontWeight: FontWeight.w400,
-                              color: kTextColor,
-                              fontSize: 16.sp)
-                          .textStyleInter,
+                    padding: EdgeInsets.only(top: 60.h, bottom: 72.h),
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Text(
+                        'Unlock the power of facial\n recognition effortlessly.',
+                        style: Styles(
+                                fontWeight: FontWeight.w400,
+                                color: kTextColor,
+                                fontSize: 16.sp)
+                            .textStyleInter,
+                      ),
                     ),
                   )
                 ],

@@ -1,4 +1,6 @@
 class ApiEndpoints {
-  static const String baseUrl = 'https://your-backend-url.com/api';
-  static const String uploadImage = '/upload';
+  static const String baseUrl =
+      'https://a918-156-197-168-246.ngrok-free.app/students/api/recognize/';
+  static const String recognize =
+      'https://a918-156-197-168-246.ngrok-free.app/students/api/recognize/';
 }

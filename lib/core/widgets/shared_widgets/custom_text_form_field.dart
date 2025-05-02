@@ -29,7 +29,9 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         if (data!.isEmpty) {
           return 'Field is Required';
         }
+        return null;
       },
+      cursorColor: kPrimaryColor,
       onChanged: widget.onChanged,
       controller: widget.controller,
       obscureText: widget.isPassword ? _isObscured : false,

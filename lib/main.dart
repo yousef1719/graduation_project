@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:graduation_project/constants.dart';
 import 'package:graduation_project/core/network/dio_helper.dart';
 import 'package:graduation_project/features/splash/presentation/views/screens/splash_view.dart';
+import 'package:graduation_project/features/users/presentation/view/screen/user_information.dart';
 import 'package:graduation_project/firebase_options.dart';
 
 void main() async {
@@ -17,7 +18,7 @@ void main() async {
     ScreenUtilInit(
       designSize: const Size(375, 812),
       minTextAdapt: true,
-      splitScreenMode: true,
+      splitScreenMode: false,
       builder: (context, child) {
         return const WhoApp();
       },
@@ -37,7 +38,13 @@ class WhoApp extends StatelessWidget {
         theme: ThemeData().copyWith(
           scaffoldBackgroundColor: kBackgroundColor,
         ),
-        home: SplashView(),
+        home: const SplashView(),
+        getPages: [
+          GetPage(
+            name: '/userInformation',
+            page: () => const UserInformation(),
+          ),
+        ],
       ),
     );
   }

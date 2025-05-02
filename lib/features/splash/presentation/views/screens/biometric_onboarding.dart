@@ -40,11 +40,12 @@ class BiometricOnboarding extends StatelessWidget {
                   padding: EdgeInsets.only(top: 8.h),
                   child: AdditionTextButton(
                     onPressed: () {
-                      Navigator.push(
+                      Navigator.pushAndRemoveUntil(
                         context,
                         MaterialPageRoute(
                           builder: (context) => SplashRegViewBody(),
                         ),
+                        (route) => false,
                       );
                     },
                     text: 'Skip',
@@ -61,6 +62,7 @@ class BiometricOnboarding extends StatelessWidget {
                   AssetsData.biometricphoto,
                   width: 326.w,
                   height: 326.h,
+                  fit: BoxFit.contain,
                 ),
               ),
               SizedBox(
@@ -76,7 +78,7 @@ class BiometricOnboarding extends StatelessWidget {
                         style: Styles(
                           fontWeight: FontWeight.w800,
                           color: kSecondaryColor,
-                          fontSize: 20.sp,
+                          fontSize: 25.sp,
                         ).textStyleInter,
                       ),
                       Text(
@@ -84,7 +86,7 @@ class BiometricOnboarding extends StatelessWidget {
                         style: Styles(
                                 fontWeight: FontWeight.w800,
                                 color: kTextColor,
-                                fontSize: 20.sp)
+                                fontSize: 25.sp)
                             .textStyleInter,
                       ),
                       Text(
@@ -92,7 +94,7 @@ class BiometricOnboarding extends StatelessWidget {
                         style: Styles(
                           fontWeight: FontWeight.w800,
                           color: kSecondaryColor,
-                          fontSize: 20.sp,
+                          fontSize: 25.sp,
                         ).textStyleInter,
                       ),
                     ],
@@ -102,32 +104,31 @@ class BiometricOnboarding extends StatelessWidget {
                     style: Styles(
                             fontWeight: FontWeight.w800,
                             color: kTextColor,
-                            fontSize: 20.sp)
+                            fontSize: 25.sp)
                         .textStyleInter,
                   ),
                   SizedBox(
-                    height: 40.h,
+                    height: 60.h,
                   ),
-                  Text(
-                    'Powered by cutting-edge AI for reliable ',
-                    style: Styles(
-                            fontWeight: FontWeight.w400,
-                            color: kTextColor,
-                            fontSize: 12.sp)
-                        .textStyleInter,
+                  FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      'Powered by cutting-edge AI for reliable\n recognition. ',
+                      textAlign: TextAlign.center,
+                      style: Styles(
+                              fontWeight: FontWeight.w400,
+                              color: kTextColor,
+                              fontSize: 16.sp)
+                          .textStyleInter,
+                    ),
                   ),
-                  Text(
-                    'recognition.',
-                    style: Styles(
-                            fontWeight: FontWeight.w400,
-                            color: kTextColor,
-                            fontSize: 14.sp)
-                        .textStyleInter,
-                  )
+                  SizedBox(
+                    height: 4.h,
+                  ),
                 ],
               ),
               SizedBox(
-                height: 105.h,
+                height: 80.h,
               ),
               CircleProgressIndicator(
                 value: 0.75,

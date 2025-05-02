@@ -123,31 +123,40 @@ class _SignupPageState extends State<SignupPage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        'By signing in your approving to our ',
-                        style: Styles(
-                                fontWeight: FontWeight.w400,
-                                color: kHintColor,
-                                fontSize: 12.sp)
-                            .textStyleInter,
+                      FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'By signing in your approving to our ',
+                          style: Styles(
+                                  fontWeight: FontWeight.w400,
+                                  color: kHintColor,
+                                  fontSize: 12.sp)
+                              .textStyleInter,
+                        ),
                       ),
-                      Text(
-                        'Terms &',
-                        style: Styles(
-                                fontWeight: FontWeight.w600,
-                                color: kPrimaryColor,
-                                fontSize: 12.sp)
-                            .textStyleInter,
+                      FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Terms &',
+                          style: Styles(
+                                  fontWeight: FontWeight.w600,
+                                  color: kPrimaryColor,
+                                  fontSize: 12.sp)
+                              .textStyleInter,
+                        ),
                       ),
                     ],
                   ),
-                  Text(
-                    'conditions and privacy policy',
-                    style: Styles(
-                            fontWeight: FontWeight.w500,
-                            color: kPrimaryColor,
-                            fontSize: 12.sp)
-                        .textStyleInter,
+                  FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      'conditions and privacy policy',
+                      style: Styles(
+                              fontWeight: FontWeight.w500,
+                              color: kPrimaryColor,
+                              fontSize: 12.sp)
+                          .textStyleInter,
+                    ),
                   ),
                   SizedBox(height: 150.h),
                   Row(
@@ -158,7 +167,7 @@ class _SignupPageState extends State<SignupPage> {
                         style: Styles(
                                 fontWeight: FontWeight.w500,
                                 color: kHintColor,
-                                fontSize: 12.sp)
+                                fontSize: 13.sp)
                             .textStyleInter,
                       ),
                       AdditionTextButton(
@@ -172,7 +181,7 @@ class _SignupPageState extends State<SignupPage> {
                         },
                         text: 'Sign in',
                         color: kPrimaryColor,
-                        fontsize: 12.sp,
+                        fontsize: 13.sp,
                       ),
                     ],
                   ),

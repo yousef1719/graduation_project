@@ -4,16 +4,17 @@ import 'package:get/get.dart';
 import 'package:graduation_project/constants.dart';
 import 'package:graduation_project/core/models/user_model.dart';
 import 'package:graduation_project/core/utils/styles.dart';
+import 'package:graduation_project/features/home/presentation/views/screens/home_view.dart';
 import 'package:graduation_project/features/users/presentation/view/widget/background_shape.dart';
 import 'package:graduation_project/features/users/presentation/view/widget/custom_elvetaed_button.dart';
 
 class UserInformation extends StatelessWidget {
-  const UserInformation({this.userModel, super.key});
-  final UserModel? userModel;
+  const UserInformation({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final UserModel userModel = Get.arguments;
+    final UserModel userModel = Get.arguments as UserModel;
+
     return Scaffold(
       backgroundColor: kBackgroundColor,
       body: Stack(
@@ -39,40 +40,47 @@ class UserInformation extends StatelessWidget {
                       Text('STUDENT INFORMATION',
                           style: Styles(
                                   color: kBackgroundColor,
-                                  fontSize: 16.sp,
+                                  fontSize: 12.sp,
                                   fontWeight: FontWeight.w700)
                               .textStyleInter),
                     ],
                   ),
                 ),
                 SizedBox(
-                  height: 120.h,
+                  height: 100.h,
                 ),
                 _infoRow('• Name: ', userModel.name),
-                _infoRow('• ID: ', userModel.id),
-                _infoRow('• Department: ', userModel.department),
-                _infoRow('• Academic Level: ', userModel.academicLevel),
                 _infoRow('• Email: ', userModel.email),
+                _infoRow('• Department: ', userModel.department),
+                _infoRow('• Phone: ', userModel.phone),
+                _infoRow('• Academic year: ', userModel.academicyear),
                 _infoRow('• Status: ', userModel.status),
-                SizedBox(height: 96.h),
+                SizedBox(height: 50.h),
                 Row(
                   children: [
                     CustomElvetaedButton(
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      backgroundcolor: kPrimaryColor,
+                      backgroundcolor: kBackgroundColor,
                       text: 'Back',
-                      color: kBackgroundColor,
+                      color: kPrimaryColor,
                     ),
                     SizedBox(
                       width: 20.w,
                     ),
                     CustomElvetaedButton(
-                      onPressed: () {},
-                      backgroundcolor: kBackgroundColor,
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HomeView(),
+                          ),
+                        );
+                      },
+                      backgroundcolor: kPrimaryColor,
                       text: 'Done',
-                      color: kPrimaryColor,
+                      color: kBackgroundColor,
                     ),
                   ],
                 ),
@@ -86,14 +94,16 @@ class UserInformation extends StatelessWidget {
 
   Widget _infoRow(String label, String value) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 32),
+      padding: EdgeInsets.only(bottom: 32.h),
       child: Text(
         '$label$value',
         style: Styles(
           color: Colors.black,
-          fontSize: 16.sp,
+          fontSize: 14.sp,
           fontWeight: FontWeight.w700,
         ).textStyleInter,
+        maxLines: 1,
+        overflow: TextOverflow.ellipsis,
       ),
     );
   }

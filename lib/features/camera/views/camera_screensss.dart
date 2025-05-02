@@ -19,14 +19,16 @@ class CameraScreensss extends StatelessWidget {
         automaticallyImplyLeading: false,
         backgroundColor: kPrimaryColor,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, size: 22.sp, color: kBackgroundColor),
+          icon: Icon(Icons.arrow_back, size: 20.sp, color: kBackgroundColor),
           onPressed: () => Get.back(),
         ),
         title: Center(
           child: Text(
             'Camera',
-            style:
-                Styles(color: kBackgroundColor, fontSize: 22.sp).textStyleInter,
+            style: Styles(
+              color: kBackgroundColor,
+              fontSize: 18.sp,
+            ).textStyleInter,
           ),
         ),
         actions: [
@@ -35,7 +37,7 @@ class CameraScreensss extends StatelessWidget {
                   controller.isVerticalMode.value
                       ? Icons.screen_lock_portrait
                       : Icons.screen_lock_landscape,
-                  size: 22.sp,
+                  size: 20.sp,
                   color: kBackgroundColor,
                 ),
                 onPressed: controller.toggleOrientation,
@@ -58,7 +60,10 @@ class CameraScreensss extends StatelessWidget {
                                   : orientation == Orientation.landscape
                                       ? -90 * (3.141592653589793 / 180)
                                       : 90 * (3.141592653589793 / 180),
-                              child: CameraPreview(controller.cameraController),
+                              child: SizedBox.expand(
+                                child:
+                                    CameraPreview(controller.cameraController),
+                              ),
                             ));
                       } else {
                         return Center(
@@ -84,6 +89,7 @@ class CameraScreensss extends StatelessWidget {
               Obx(
                 () => controller.isLoading.value
                     ? Container(
+                        // ignore: deprecated_member_use
                         color: Colors.black.withOpacity(0.5),
                         child: Center(
                           child: CircularProgressIndicator(

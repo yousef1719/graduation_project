@@ -26,7 +26,7 @@ class DividerWithText extends StatelessWidget {
                 style: Styles(
                         fontWeight: FontWeight.w500,
                         color: Color(0xff4B4B4B),
-                        fontSize: 12.sp)
+                        fontSize: 14.sp)
                     .textStyleInter,
               ),
             ),

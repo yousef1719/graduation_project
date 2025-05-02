@@ -17,14 +17,16 @@ class HomeView extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              'Face scan in progress... \nlet’s recognize your face.',
-              textAlign: TextAlign.center,
-              style: Styles(
-                      color: kTextColor,
-                      fontSize: 22.sp,
-                      fontWeight: FontWeight.w600)
-                  .textStyleInter,
+            Flexible(
+              child: Text(
+                'Face scan in progress... \nlet’s recognize your face.',
+                textAlign: TextAlign.center,
+                style: Styles(
+                        color: kTextColor,
+                        fontSize: 22.sp,
+                        fontWeight: FontWeight.w600)
+                    .textStyleInter,
+              ),
             ),
             SizedBox(height: 60.h),
             Image.asset(
@@ -48,7 +50,9 @@ class HomeView extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => CameraScreensss()),
+                  MaterialPageRoute(
+                    builder: (context) => CameraScreensss(),
+                  ),
                 );
               },
             ),

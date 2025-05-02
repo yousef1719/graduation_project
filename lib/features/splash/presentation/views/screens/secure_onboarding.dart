@@ -39,11 +39,12 @@ class SecureOnboarding extends StatelessWidget {
                   padding: EdgeInsets.only(top: 8.h),
                   child: AdditionTextButton(
                     onPressed: () {
-                      Navigator.push(
+                      Navigator.pushAndRemoveUntil(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => SplashRegViewBody(),
+                          builder: (context) => const SplashRegViewBody(),
                         ),
+                        (route) => false,
                       );
                     },
                     text: 'Skip',
@@ -105,24 +106,20 @@ class SecureOnboarding extends StatelessWidget {
                         .textStyleInter,
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 40.h, bottom: 10.h),
-                    child: Text(
-                      'Your data is encrypted and protected at all',
-                      style: Styles(
-                              fontWeight: FontWeight.w400,
-                              color: kTextColor,
-                              fontSize: 12.sp)
-                          .textStyleInter,
+                    padding: EdgeInsets.only(top: 60.h, bottom: 10.h),
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Text(
+                        'Your data is encrypted and protected at all\n times.',
+                        textAlign: TextAlign.center,
+                        style: Styles(
+                                fontWeight: FontWeight.w400,
+                                color: kTextColor,
+                                fontSize: 16.sp)
+                            .textStyleInter,
+                      ),
                     ),
                   ),
-                  Text(
-                    'times.',
-                    style: Styles(
-                            fontWeight: FontWeight.w400,
-                            color: kTextColor,
-                            fontSize: 12.sp)
-                        .textStyleInter,
-                  )
                 ],
               ),
               SizedBox(
@@ -132,11 +129,12 @@ class SecureOnboarding extends StatelessWidget {
                 value: 1,
                 angel: -3.14 / 2,
                 onPressed: () {
-                  Navigator.push(
+                  Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(
                       builder: (context) => SplashRegViewBody(),
                     ),
+                    (route) => false,
                   );
                 },
               ),
